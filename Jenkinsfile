@@ -34,7 +34,7 @@ pipeline {
         }
         stage('publish') {
             steps {
-                sh "docker push jazapp/passwordapi-api:taller\${BUILD_ID}"
+                sh "docker push jazapp/password-api:taller\${BUILD_ID}"
             }
         }
         stage('deploy') {
@@ -45,7 +45,7 @@ pipeline {
         }
         stage('acceptance_test') {
             steps {
-                sh 'curl http://167.172.131.202/actuator/health'
+                sh 'curl http://10.245.194.137/actuator/health'
             }
         }        
     }
